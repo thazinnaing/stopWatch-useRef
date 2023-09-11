@@ -15,6 +15,7 @@ const UseRefExample=()=>{
         e.preventDefault()
         nameref= "thazin";
         bodyref="naing"
+        setName(...name)
         
     
     }
