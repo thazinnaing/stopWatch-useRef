@@ -10,6 +10,9 @@ const UseRefExample=()=>{
     const onChangeHandler=(e)=>{
         
     }
+    const onClickHandler=()=>{
+        
+    }
 
     return(
         <form>
