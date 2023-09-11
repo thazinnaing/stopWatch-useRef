@@ -12,7 +12,8 @@ const UseRefExample=()=>{
     }
     const onClickHandler=()=>{
         e.preventDefault()
-        nameref= "thazin"
+        nameref= "thazin";
+        bodyref="naing"
     
     }
 
