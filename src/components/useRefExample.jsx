@@ -1,9 +1,10 @@
-import { useRef } from "react";
+import { useRef, useState } from "react";
 
 const UseRefExample=()=>{
 
     const nameref=useRef();
     const bodyref=useRef();
+    const [name, setName]=useState()
 
     console.log("name", nameref.current, " body", bodyref)
 
@@ -14,6 +15,7 @@ const UseRefExample=()=>{
         e.preventDefault()
         nameref= "thazin";
         bodyref="naing"
+        
     
     }
 
