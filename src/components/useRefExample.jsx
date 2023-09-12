@@ -1,35 +1,38 @@
-import { useRef, useState } from "react";
+import { useState, useRef } from 'react';
 
-const UseRefExample=()=>{
+export default function Stopwatch() {
+  const [startTime, setStartTime] = useState(null);
+  const [now, setNow] = useState(null);
+  const intervalRef = useRef(null);
 
-    const nameref=useRef();
-    const bodyref=useRef();
-    const [name, setName]=useState()
+  function handleStart() {
+    setStartTime(Date.now());
+    setNow(Date.now());
 
-    console.log("name", nameref.current, " body", bodyref)
+    clearInterval(intervalRef.current);
+    intervalRef.current = setInterval(() => {
+      setNow(Date.now());
+    }, 10);
+  }
 
-    const onChangeHandler=(e)=>{
-        
-    }
-    const onClickHandler=()=>{
-        e.preventDefault()
-        nameref= "thazin";
-        bodyref="naing"
-        setName(...name)
-        
-    
-    }
+  function handleStop() {
+    clearInterval(intervalRef.current);
+  }
 
-    return(
-        <form>
-        <label htmlFor="name">Name:</label>
-        <input type="text" id="name" name="name" onChange = {onChangeHandler} ref={nameref}/>
-        <br/>
-        <label htmlFor="body">Body:</label>
-        <input type="text" id="body" name="body" ref={bodyref}/>
-        
-        </form>
-    )
+  let secondsPassed = 0;
+  if (startTime != null && now != null) {
+    secondsPassed = (now - startTime) / 1000;
+  }
+
+  return (
+    <>
+      <h1>Time passed: {secondsPassed.toFixed(3)}</h1>
+      <button onClick={handleStart}>
+        Start
+      </button>
+      <button onClick={handleStop}>
+        Stop
+      </button>
+    </>
+  );
 }
-
-export default UseRefExample;

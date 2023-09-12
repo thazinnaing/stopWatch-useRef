@@ -1,9 +1,9 @@
-import UseRefExample from "./components/useRefExample";
+import Stopwatch from "./components/useRefExample";
 
 const App=()=>{
   return(
     <div>
-    <UseRefExample/>
+    <Stopwatch/>
     </div>
   )
 
