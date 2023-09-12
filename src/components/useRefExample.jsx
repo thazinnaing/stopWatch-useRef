@@ -23,9 +23,9 @@ export default function Stopwatch() {
   if (startTime != null && now != null) {
     secondsPassed = (now - startTime) / 1000;
   }
-
+ 
   return (
-    <>
+    <div>
       <h1>Time passed: {secondsPassed.toFixed(3)}</h1>
       <button onClick={handleStart}>
         Start
@@ -33,6 +33,6 @@ export default function Stopwatch() {
       <button onClick={handleStop}>
         Stop
       </button>
-    </>
+    </div>
   );
 }
